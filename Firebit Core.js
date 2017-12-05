@@ -1,6 +1,6 @@
 ﻿
 //Firebit Core by Ian Wilkey
-//Version 1.5
+//hi//Version 1.5
 
 var speed = 10;
 static var ammo = 32;
