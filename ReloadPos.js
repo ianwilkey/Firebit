@@ -54,7 +54,3 @@ applymode = true;
 yield WaitForSeconds (2);
 applymode = false;
 }
-
-//Y=-3.467
-//X=-0.29
-//Z=-0.085

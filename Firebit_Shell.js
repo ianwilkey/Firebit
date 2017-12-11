@@ -16,37 +16,37 @@ function Shell () {
 
 function Update () {
 if(Input.GetAxis("Fire1")){
-         shooting = true;
-     }
+		 shooting = true;
+	 }
 if(!Input.GetAxis("Fire1")){
    shooting = false;
-     }
-     
-     if (ammo < 10)
-     {
-     if(Input.GetKey("r")){
+	 }
+	 
+	 if (ammo < 10)
+	 {
+	 if(Input.GetKey("r")){
 		NoReload();
-     }
+	 }
 }
-     
-     if (ammo < 1) {
+	 
+	 if (ammo < 1) {
 noammo();
 shooting = false;
-     }
-     
-     if (ammo <= 10) {
+	 }
+	 
+	 if (ammo <= 10) {
 		if(Input.GetKey("r")){
 			reload();
 		}
- 	}
+	}
  }
  
 function noammo () {
- 	if(Input.GetButtonDown("Fire1")){
- 	}
- 	if(Input.GetKey("r")){
+	if(Input.GetButtonDown("Fire1")){
+	}
+	if(Input.GetKey("r")){
 reload();
- 	}
+	}
  }
  
 function NoReload(){
@@ -54,8 +54,8 @@ noreload = true;
 } 
  
 function reload () {
- 	yield WaitForSeconds (2);
- 	ammo = 32;
- 	Update();
+	yield WaitForSeconds (2);
+	ammo = 32;
+	Update();
 
  } 

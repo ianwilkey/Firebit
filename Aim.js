@@ -4,7 +4,6 @@ var ObjectToMove: GameObject;
 
 var smoothTime : float = 1.0f;
 
-
 var PositionX : float;
 
 var PositionY : float;
@@ -14,13 +13,14 @@ var PositionZ : float;
 var StartPos: Vector3;
 
 var AimUp : AudioClip;
+
 var AimDown : AudioClip;
 
 function Start(){
 	
-	StartPos = transform.localPosition;   
+	StartPos = transform.localPosition;	  
 	
-}   
+}	
 
 function Apply()
 {
@@ -61,6 +61,6 @@ function Update () {
 	if(applymode){
 		
 		Apply();
-	}   
+	}	
 	
 }

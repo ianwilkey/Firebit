@@ -1,6 +1,5 @@
-﻿
-//Firebit Core by Ian Wilkey
-//hi//Version 1.5
+﻿//Firebit Core by Ian Wilkey
+//Version 1.7
 
 var speed = 10;
 static var ammo = 32;
@@ -20,7 +19,7 @@ var MyFont : Font;
 var Size : float;
 
 function Start() {
-    InvokeRepeating("Shoot", 0.0, 1.0 / bulletsPerSecond);
+	InvokeRepeating("Shoot", 0.0, 1.0 / bulletsPerSecond);
  }
  
 function Shoot () {
@@ -34,59 +33,59 @@ function Shoot () {
  }
  
  function Update (){
- 	 isreload = false;
-     shooting = false;
-     if(Input.GetAxis("Fire1")){
-         shooting = true;
-     }
-     
-     if (ammo < 10)
-     {
-     if(Input.GetKey("r")){
+	 isreload = false;
+	 shooting = false;
+	 if(Input.GetAxis("Fire1")){
+		 shooting = true;
+	 }
+	 
+	 if (ammo < 10)
+	 {
+	 if(Input.GetKey("r")){
 		NoReload();
-     }
+	}
 }
-     
-     if (ammo < 1) {
+	 
+	 if (ammo < 1) {
 noammo();
-     }
-     
-     if (ammo <= 10) {
+	 }
+	 
+	 if (ammo <= 10) {
 		if(Input.GetKey("r")){
 			reload();
 			GetComponent.<AudioSource>().PlayOneShot(ReloadSound);
 		}
- 	}
+	}
  }
  
 function noammo () {
 	isreload = false;
- 	shooting = false;
- 	if(Input.GetButtonDown("Fire1")){
- 	GetComponent.<AudioSource>().PlayOneShot(NoAmmoSound);
- 	}
- 	if(Input.GetKey("r")){
+	shooting = false;
+	if(Input.GetButtonDown("Fire1")){
+	GetComponent.<AudioSource>().PlayOneShot(NoAmmoSound);
+	}
+	if(Input.GetKey("r")){
 reload();
- 	}
+	}
  }
  
 function NoReload(){
 noreload = true;
-} 
+}
  
 function reload () {
 	noreload = false;
 	isreload = true;
- 	yield WaitForSeconds (2);
- 	ammo = 32;
- 	Update();
- 	noreload = true;
- }
+	yield WaitForSeconds (2);
+	ammo = 32;
+	Update();
+	noreload = true;
+}
 
 function OnGUI () {
 
-    GUI.skin.font = MyFont;
-    
+	GUI.skin.font = MyFont;
+	
 	GUI.Label(Rect(40,40, 700, 700), "Ammo: "+ammo);
 		if (ammo <= 10 and ammo > 0){
 	GUI.Label(Rect(140,40, 1000, 1000), "Low ammo. Press 'r' to reload");
